@@ -1,0 +1,43 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Namespace","metadata":{"annotations":{},"creationTimestamp":"2022-03-26T00:36:00Z","deletionTimestamp":"2022-03-26T05:01:41Z","name":"prometheus","resourceVersion":"30818","uid":"8621e2e9-3d48-49db-8e93-609135551456"},"spec":null,"status":{"conditions":[{"lastTransitionTime":"2022-03-26T05:01:46Z","message":"All resources successfully discovered","reason":"ResourcesDiscovered","status":"False","type":"NamespaceDeletionDiscoveryFailure"},{"lastTransitionTime":"2022-03-26T05:01:46Z","message":"All legacy kube types successfully parsed","reason":"ParsedGroupVersions","status":"False","type":"NamespaceDeletionGroupVersionParsingFailure"},{"lastTransitionTime":"2022-03-26T05:07:05Z","message":"Failed to delete all resource types, 1 remaining: unexpected items still remain in namespace: prometheus for gvr: /v1, Resource=pods","reason":"ContentDeletionFailed","status":"True","type":"NamespaceDeletionContentFailure"},{"lastTransitionTime":"2022-03-26T05:01:46Z","message":"Some resources are remaining: persistentvolumeclaims. has 2 resource instances, pods. has 6 resource instances","reason":"SomeResourcesRemain","status":"True","type":"NamespaceContentRemaining"},{"lastTransitionTime":"2022-03-26T05:01:46Z","message":"Some content in the namespace has finalizers remaining: kubernetes.io/pvc-protection in 2 resource instances","reason":"SomeFinalizersRemain","status":"True","type":"NamespaceFinalizersRemaining"}],"phase":"Terminating"}}
+  creationTimestamp: "2022-03-26T00:36:00Z"
+  deletionTimestamp: "2022-03-26T05:01:41Z"
+  name: prometheus
+  resourceVersion: "32290"
+  uid: 8621e2e9-3d48-49db-8e93-609135551456
+spec:
+status:
+  conditions:
+  - lastTransitionTime: "2022-03-26T05:01:46Z"
+    message: All resources successfully discovered
+    reason: ResourcesDiscovered
+    status: "False"
+    type: NamespaceDeletionDiscoveryFailure
+  - lastTransitionTime: "2022-03-26T05:01:46Z"
+    message: All legacy kube types successfully parsed
+    reason: ParsedGroupVersions
+    status: "False"
+    type: NamespaceDeletionGroupVersionParsingFailure
+  - lastTransitionTime: "2022-03-26T05:07:05Z"
+    message: 'Failed to delete all resource types, 1 remaining: unexpected items still
+      remain in namespace: prometheus for gvr: /v1, Resource=pods'
+    reason: ContentDeletionFailed
+    status: "True"
+    type: NamespaceDeletionContentFailure
+  - lastTransitionTime: "2022-03-26T05:01:46Z"
+    message: 'Some resources are remaining: persistentvolumeclaims. has 2 resource
+      instances, pods. has 6 resource instances'
+    reason: SomeResourcesRemain
+    status: "True"
+    type: NamespaceContentRemaining
+  - lastTransitionTime: "2022-03-26T05:01:46Z"
+    message: 'Some content in the namespace has finalizers remaining: kubernetes.io/pvc-protection
+      in 2 resource instances'
+    reason: SomeFinalizersRemain
+    status: "True"
+    type: NamespaceFinalizersRemaining
+  phase: Terminating
