@@ -1,6 +1,6 @@
 
 resource "aws_eip" "nat" {
-  vpc = true
+  domain = "vpc"
 
   tags = merge(var.default_tags, {
     Name = "nat"
@@ -18,6 +18,7 @@ resource "aws_nat_gateway" "nat" {
   })
 
   depends_on = [
-    aws_internet_gateway.igw
+    aws_internet_gateway.igw,
+    aws_subnet.eks_public_subnet
   ]
 }

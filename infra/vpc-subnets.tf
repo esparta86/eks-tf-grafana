@@ -1,6 +1,8 @@
 
 resource "aws_vpc" "main_vpc" {
   cidr_block = var.development_vpc_cidr
+  enable_dns_hostnames = var.vpc_dns_hostnames
+  enable_dns_support = var.vpc_dns_support
 
   tags = merge(var.default_tags, {
     Name = "main"
@@ -12,7 +14,7 @@ resource "aws_vpc" "main_vpc" {
 data "aws_availability_zones" "available" {
   filter {
     name   = "zone-name"
-    values = ["us-east-1a", "us-east-1b", "us-east-1c"]
+    values = ["us-east-1a", "us-east-1b"]
   }
 }
 
